@@ -1,0 +1,708 @@
+# Created by Octave 5.2.0, Sun Dec 06 19:04:29 2020 CET <helena@helena-Aspire-A315-42>
+# name: U
+# type: cell
+# rows: 100
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 22
+https://www.cam.ac.uk/
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 20
+http://ogp.me/ns/fb#
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 17
+http://ogp.me/ns#
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 17
+http://schema.org
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 20
+http://www.cam.ac.uk
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 44
+http://www.facebook.com/cambridge.university
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 40
+http://instagram.com/cambridgeuniversity
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 35
+http://www.linkedin.com/school/4522
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 42
+http://www.youtube.com/cambridgeuniversity
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 36
+http://www.twitter.com/cambridge_uni
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 25
+http://www.cam.ac.uk/news
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 29
+http://www.cam.ac.uk/facebook
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 30
+http://www.cam.ac.uk/instagram
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 28
+http://www.cam.ac.uk/twitter
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 28
+http://www.cam.ac.uk/youtube
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 29
+http://www.cam.ac.uk/linkedin
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 53
+http://www.information-compliance.admin.cam.ac.uk/foi
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 102
+http://www.registrarysoffice.admin.cam.ac.uk/governance-and-strategy/anti-slavery-and-anti-trafficking
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 25
+http://www.jobs.cam.ac.uk
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 19
+http:\/\/schema.org
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 33
+http:\/\/schema.org\/FollowAction
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 24
+http://schema.org/Person
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 44
+http://www.youtube.com/c/cambridgeuniversity
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 48
+http:\/\/www.youtube.com\/c\/cambridgeuniversity
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 29
+http://schema.org/ImageObject
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 52
+http://schema.org/http://schema.org/YoutubeChannelV2
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 34
+http://schema.org/YoutubeChannelV2
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 42
+http://ogp.me/ns/fb# og: http://ogp.me/ns#
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 37
+http://data-vocabulary.org/Breadcrumb
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 39
+http://purl.org/rss/1.0/modules/content
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 24
+http://purl.org/dc/terms
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 25
+http://xmlns.com/foaf/0.1
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 24
+http://rdfs.org/sioc/ns#
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 27
+http://rdfs.org/sioc/types#
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 29
+http://www.cam.ac.uk/research
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 39
+http://www.cam.ac.uk/study-at-cambridge
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 40
+http://www.study.cam.ac.uk/undergraduate
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 48
+http://www.study.cam.ac.uk/undergraduate/courses
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 46
+http://www.study.cam.ac.uk/undergraduate/apply
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 47
+http://www.study.cam.ac.uk/undergraduate/events
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 48
+http://www.study.cam.ac.uk/undergraduate/finance
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 26
+http://www.becambridge.com
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 87
+http://www.cam.ac.uk/about-the-university/international-cambridge/studying-at-cambridge
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 24
+http://www.ice.cam.ac.uk
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 48
+http://www.admin.cam.ac.uk/offices/education/epe
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 25
+http://www.educ.cam.ac.uk
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 41
+http://www.cam.ac.uk/about-the-university
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 78
+http://www.cam.ac.uk/about-the-university/how-the-university-and-colleges-work
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 49
+http://www.cam.ac.uk/about-the-university/history
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 65
+http://www.cam.ac.uk/about-the-university/visiting-the-university
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 66
+http://www.cam.ac.uk/about-the-university/term-dates-and-calendars
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 20
+http://map.cam.ac.uk
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 30
+http://www.cam.ac.uk/for-media
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 36
+http://www.cam.ac.uk/video-and-audio
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 54
+http://www.cam.ac.uk/about-the-university/publications
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 65
+http://www.cam.ac.uk/about-the-university/international-cambridge
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 34
+http://www.admin.cam.ac.uk/whatson
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 38
+http://www.cam.ac.uk/public-engagement
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 33
+http://www.philanthropy.cam.ac.uk
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 30
+http://www.cam.ac.uk/for-staff
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 43
+http://www.admin.cam.ac.uk/students/gateway
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 27
+http://www.alumni.cam.ac.uk
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 33
+http://www.cam.ac.uk/for-business
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 45
+http://www.cam.ac.uk/colleges-and-departments
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 45
+http://www.cam.ac.uk/libraries-and-facilities
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 44
+http://www.cam.ac.uk/museums-and-collections
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 43
+http://www.cam.ac.uk/email-and-phone-search
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 52
+http://www.legislation.gov.uk/ukpga/2000/36/contents
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 35
+http://www.cam.ac.uk/university-a-z
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 43
+http://www.cam.ac.uk/contact-the-university
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 50
+http://www.cam.ac.uk/about-this-site/accessibility
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 47
+http://www.admin.cam.ac.uk/univ/information/foi
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 57
+http://www.cam.ac.uk/about-this-site/terms-and-conditions
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 34
+http://www.cam.ac.uk/research/news
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 38
+http://www.cam.ac.uk/research/features
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 40
+http://www.cam.ac.uk/research/discussion
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 42
+http://www.cam.ac.uk/research/spotlight-on
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 51
+http://www.cam.ac.uk/research/research-at-cambridge
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 82
+http://www.cambridge.org/about-us/legal-notices/anti-slavery-and-human-trafficking
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 69
+http://www.hr.admin.cam.ac.uk/policies-procedures/dignity-work-policy
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 60
+http://www.legislation.gov.uk/ukpga/2015/30/contents/enacted
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 49
+http://www.hr.admin.cam.ac.uk/policies-procedures
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 51
+http://www.cam.ac.uk/about-this-site/privacy-policy
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 65
+http://www.information-compliance.admin.cam.ac.uk/data-protection
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 31
+http://www.governance.cam.ac.uk
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 59
+http://www.flickr.com/photos/cambridgeuniversity/6121504878
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 45
+http://www.hr.admin.cam.ac.uk/hr-services/tes
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 61
+http://www.hr.admin.cam.ac.uk/hr-services/tes/work-experience
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 51
+http://www.cam.ac.uk/about-the-university/volunteer
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 28
+http://www.cam.ac.uk/privacy
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 25
+http://www.cam.ac.uk/site
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 21
+http://webschemas.org
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 45
+http://schema.org/Person&entry.882602760=Type
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 162
+http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The <a class=
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 135
+http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The <a class=
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 22
+http://www.gs1.org/gln
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 32
+http://tools.ietf.org/html/bcp47
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 16
+http://rnews.org
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 33
+http://tools.ietf.org/html/bcp47\
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 23
+http://www.gs1.org/gln\
+
+
+
+
+
