@@ -1,0 +1,107 @@
+\documentclass[11pt]{article}
+
+\title{HITS algoritam}
+\author{Bruno Fabuli\'{c}, Helena Marciu\v{s}, Dora Parma\v{c}}
+
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{esvect}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{hyperref}
+%\hypersetup{colorlinks=true}
+\newcommand\eref[1]{(\ref{#1})}
+\usepackage{enumitem}
+\usepackage[croatian]{babel}
+\usepackage{graphicx}
+\hypersetup{
+    urlcolor=black
+}
+\newtheorem{theorem}{Teorem}[section]
+
+
+
+\begin{document}
+	\maketitle
+	\pagenumbering{gobble}
+	\newpage
+	\hypersetup{linkcolor=black}
+	\tableofcontents
+	\pagenumbering{roman}
+\newpage
+\hypersetup{linkcolor=red}
+\pagenumbering{arabic}
+
+\section{WWW kao usmjereni graf}
+Svaku kolekciju povezanih web stranica možemo predstaviti usmjerenim grafom $G=(V,E)$. Web stranice predstavljamo vrhovima, tj. $V$ je skup web stranica, a poveznice između stranicama predstavljamo bridovima - za stranice $p_{i}$, $p_{j} \in V$, brid $e_{ij}$ je u $E$ ako postoji poveznica sa stranice $p_{i}$ na stranicu $p_{j}$. Kažemo da je stupanj izlaznosti (out - degree) vrha $p_{i}$ broj vrhova na koje $p_{i}$ pokazuje, a stupanj ulaznosti (in-degree) broj vrhova koji pokazuju na $p_{i}$.
+
+\section{Autoriteti i hubovi}
+Svakoj stranici $p_{i}$ pridružujemo dvije vrijednosti: autoritet-vrijednost $x_{i}$ i hub-vrijednost $y_{i}$. \\
+Rekurzivno definiramo vrijednosti $x_{i}$ i $y_{i}$:
+\begin{equation} \label{eq:1}
+x_{i} = \sum_{j: e_{ji}\in E} y_{j} \hspace{1cm}  y_{i} = \sum_{j: e_{ij}\in E} x_{j}
+\end{equation}
+Odnosno, autoritet-vrijednost web stranice je suma hub-vrijednosti svih stranica koje pokazuju na nju. Hub vrijednost web stranice je suma autoritet-vrijednosti web stranica na koje ona pokazuje.
+Intuitivno, smatramo da je web stranica dobar autoritet ako na nju pokazuju dobri hubovi. Analogno, smatramo da je web stranica dobar hub ako pokazuje na dobre autoritete.
+\section{Matrična formulacija}
+Za usmjereni graf $G=(V,E)$, definiramo matricu linkova:
+$$L = \begin{cases}
+1,~e_{ij}\in E\\
+0,~e_{ij}\not\in E
+\end{cases}$$
+Autoritet-vrijednosti $x_{i}$ čine vektor autoriteta $x = (x_{1}, x_{2}, \dots, x_{n})$, a hub vrijednosti čine vektor hubova $y = (y_{1}, y_{2}, \dots, y_{n})$.
+Sada se jednadžbe (\ref{eq:1}) mogu zapisati kao
+\begin{equation}\label{eq:2}
+x = L^{T}y\hspace{1cm}y = Lx
+\end{equation}
+
+\section{HITS algoritam}
+Iterativno računamo autoritet-vrijednosti i hub-vrijednosti.
+Sa $x^{(k)}$ i $y^{(k)}$ označimo vrijednost vektora $x$ odnosno $y$ u $k$-toj iteraciji. Iz jedndadžba (\ref{eq:2}) slijedi
+\begin{equation}
+cx^{(k+1)} = L^{T}Lx^{(k)}\hspace{1cm} cy^{(k+1)} = LL^{T}y^{(k)}˘
+\end{equation}
+uz početni uvjet
+$x^{(0)} = y^{(0)} = (1, 1, \dots, 1)$, gdje je $c$ konstanta takva da vrijedi $||x||_{2} =1$ i $||y||_{2} =1$. Matricu $L^{T}L$ nazivamo matrica autoriteta, a matricu $LL^{T}$ nazivamo matrica hubova. Uočimo da su ove matrice simetrične.\\
+Možemo zapisati algoritam:
+\begin{enumerate}
+\item Ulaz: Matrica linkova $L$
+\item Inicijaliziramo $x^{(0)} = (1,1,\dots,1)$, $y^{(0)} = (1,1,\dots,1)$
+\item Računaj $k$-tu iteraciju 
+\begin{equation*}
+x^{(k+1)} = L^{T}Lx^{(k)}\hspace{1cm} y^{(k+1)} = LL^{T}y^{(k)}˘
+\end{equation*}
+\item Normiraj dobivene vrijednosti
+\begin{equation*}
+x^{(k+1)} = \frac{x^{(k+1)}}{||x^{(k+1)}||_{2}}\hspace{1cm}y^{(k+1)} = \frac{y^{(k+1)}}{||y^{(k+1)}||_{2}}
+\end{equation*}
+\item Provjeri kriterij zaustavljanja
+\begin{itemize}
+\item Ako kriterij zaustavljanja nije zadovoljen, idi na 3, korak
+\item Ako je kriterij zaustavljanja zadovoljen, završi
+\end{itemize}
+\item Izlaz: Vektori vrijednosti autoriteta, odnosno hubova, $x$ i $y$
+\end{enumerate}
+$i$-ta komponenta vektora $x$ predstavlja autoritet-vrijednost web stranice $p_{i}$, a $i$-ta komponenta vektora $y$ predstavlja hub-vrijednost web stranice $p_{i}$.
+\section{Konvergencija algoritma}
+Primijetimo da je $L^{T}L = (LL^{T})^{T}$. Stoga, matrice $L^{T}L$ i $LL^{T}$ imaju iste svojstvene vrijednosti. Kako su to realne i simetrične matrice, njihove svojstvene vrijednosti su također realne.\\
+Neka su $\lambda_{1}$, $\lambda_{2}$, $\dots$, $\lambda_{n}$ svojstvene vrijednosti ovih matrica poredane padajuće po apsolutnoj vrijednosti, tj. vrijedi $|\lambda_{1}|\geq |\lambda_{2}|\geq \dots \geq |\lambda_{n}|$. Pretpostavimo da vrijedi $|\lambda_{1}| > |\lambda_{2}|$
+Svojstvenu vrijednost $\lambda_{1}$ nazivamo dominantna svojstvena vrijednost.
+
+\begin{theorem}
+Nizovi $x^{(1)}, x^{(2)}, x^{(3)}\dots$ i $y^{(1)}, y^{(2)}, y^{(3)}\dots$ konvergiraju limesima $x^{*}$ i $y^{*}$.
+\end{theorem}
+\begin{proof}
+
+\end{proof}
+
+Dokaz ovog teorem daje sljedeći rezultat.
+\begin{theorem}
+$x^{*}$ je dominantni svojstveni vektor matrice $L^{T}L$, a $y^{*}$ je dominantni svojstveni vektor matrice $LL^{T}$.
+\end{theorem}
+
+\section{Vjerojatnosna analiza}
+
+
+\end{document}
