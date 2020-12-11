@@ -2,6 +2,7 @@ hits_movies - rangiranje filmova
  
 movies.csv sadrži podatke o filmovima, ratings.csv sadrži podatke o ocjenama filmova od različitih usera
 filmovi su autoriteti, useri su hubovi
+Podaci su s kaggle-a: https://www.kaggle.com/rounakbanik/the-movies-dataset
  
 U command window učitati ratings.csv i movies.csv:
 pkg load io
