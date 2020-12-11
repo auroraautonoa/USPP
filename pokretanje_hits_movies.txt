@@ -1,0 +1,15 @@
+hits_movies - rangiranje filmova
+ 
+movies.csv sadrži podatke o filmovima, ratings.csv sadrži podatke o ocjenama filmova od različitih usera
+filmovi su autoriteti, useri su hubovi
+ 
+U command window učitati ratings.csv i movies.csv:
+pkg load io
+r = csvread('ratings.csv');
+m = csv2cell('movies.csv');
+
+pokrenuti construct.m:
+L = construct(r, m, 671, 9125) //671 - broj user-a, 9125 - broj filmova
+pokrenuti hits_movies.m:
+hits_movies(L, m, 671, 9125);
+
