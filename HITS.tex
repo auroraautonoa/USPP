@@ -19,6 +19,7 @@
     urlcolor=black
 }
 \newtheorem{theorem}{Teorem}[section]
+\newtheorem{prop}{Propozicija} [section]
 
 
 
@@ -33,6 +34,9 @@
 \hypersetup{linkcolor=red}
 \pagenumbering{arabic}
 
+\section{Uvod}
+
+
 \section{WWW kao usmjereni graf}
 Svaku kolekciju povezanih web stranica možemo predstaviti usmjerenim grafom $G=(V,E)$. Web stranice predstavljamo vrhovima, tj. $V$ je skup web stranica, a poveznice između stranicama predstavljamo bridovima - za stranice $p_{i}$, $p_{j} \in V$, brid $e_{ij}$ je u $E$ ako postoji poveznica sa stranice $p_{i}$ na stranicu $p_{j}$. Kažemo da je stupanj izlaznosti (out - degree) vrha $p_{i}$ broj vrhova na koje $p_{i}$ pokazuje, a stupanj ulaznosti (in-degree) broj vrhova koji pokazuju na $p_{i}$.
 
@@ -44,6 +48,15 @@ x_{i} = \sum_{j: e_{ji}\in E} y_{j} \hspace{1cm}  y_{i} = \sum_{j: e_{ij}\in E} 
 \end{equation}
 Odnosno, autoritet-vrijednost web stranice je suma hub-vrijednosti svih stranica koje pokazuju na nju. Hub vrijednost web stranice je suma autoritet-vrijednosti web stranica na koje ona pokazuje.
 Intuitivno, smatramo da je web stranica dobar autoritet ako na nju pokazuju dobri hubovi. Analogno, smatramo da je web stranica dobar hub ako pokazuje na dobre autoritete.
+\section{Podgraf fokusiran na upit}
+Pretpostavimo da je dan upit $\sigma$. Želimo pronaći podgraf grafa G na kojem ćemo izvesti algoritam. Mogli bi se ograničiti na skup svih stranica koje spominju upit $\sigma$. Međutim, broj takvih stranica može biti vrlo velik što bi uzrokovalo velikim "troškom" kod računanja. Također, kao što smo prije zaključili, najbolji autoriteti možda neće biti u tom skupu.\\
+Htjeli bismo kolekciju $S_{\sigma}$ koja ima sljedeća svojstva
+\begin{enumerate}
+\item $S_{\sigma}$ je relativno mali skup
+\item $S_{\sigma}$ sadrži većinom sadrži relevantne stranice
+\item $S_{\sigma}$ sadrži većinu dobrih autoriteta
+\end{enumerate}
+
 \section{Matrična formulacija}
 Za usmjereni graf $G=(V,E)$, definiramo matricu linkova:
 $$L = \begin{cases}
@@ -102,6 +115,36 @@ $x^{*}$ je dominantni svojstveni vektor matrice $L^{T}L$, a $y^{*}$ je dominantn
 \end{theorem}
 
 \section{Vjerojatnosna analiza}
+\begin{prop}
+Prosječna vrijednost ko-citacija dana je formulom
+\begin{equation} \label{eq:4}
+\langle C_{ik}\rangle = \frac{d_{i}d_{k}}{n-1}
+\end{equation}
+\end{prop}
+\begin{proof}
 
+\end{proof}
 
+\section{Average case analiza}
+\begin{theorem}
+Matrica autoriteta $L^{T}L$ u prosječnom slučaju, uz uvjet $d_[i]+d_{j}<n+1$ za svaki $i,j$ ima sljedeće svojstvene vrijednosti i svojstvene vektore:
+\begin{enumerate}
+\item Za svojstvene vrijednosti vrijedi
+\begin{equation}
+\lambda_{1} > \hat{d_{1}}>\lambda_{2}>\hat{d_{2}}>\dots >\lambda_{n}>\hat{d_{n}}
+\end{equation}
+\item k-ti svojsteni vektor je
+\begin{equation} 
+\textbf{u}_{k}= \left(\frac{d_{1}}{\lambda_{k}-\hat{d_{1}}},\frac{d_{2}}{\lambda_{k}-\hat{d_{2}}},\dots, \frac{d_{n}}{\lambda_{k}-\hat{d_{n}}} \right)^{T}
+\end{equation}
+\end{enumerate}
+Web stranice indeksiramo tako da je $d_{1}>d_{2}>\dots>d_{n}$ i vrijedi $\hat{d_{i}} = d_{i} - \frac{d_{i}^{2}}{n-1}$.
+\end{theorem}
+\begin{proof}
+Koristeći izraz (\ref{eq:4}), prosječna matrica autoriteta je
+\begin{equation}
+\langle L^{T}L\rangle = \langle D \rangle + \langle C \rangle = diag(\hat{d_{1}}, \dots , \hat{d_{n}}) + \frac{1}{n-1} dd^{T}
+\end{equation}
+\end{proof}
+Analogan rezultat vrijedi za matricu hubova $LL^{T}$.
 \end{document}
