@@ -48,14 +48,20 @@ x_{i} = \sum_{j: e_{ji}\in E} y_{j} \hspace{1cm}  y_{i} = \sum_{j: e_{ij}\in E} 
 \end{equation}
 Odnosno, autoritet-vrijednost web stranice je suma hub-vrijednosti svih stranica koje pokazuju na nju. Hub vrijednost web stranice je suma autoritet-vrijednosti web stranica na koje ona pokazuje.
 Intuitivno, smatramo da je web stranica dobar autoritet ako na nju pokazuju dobri hubovi. Analogno, smatramo da je web stranica dobar hub ako pokazuje na dobre autoritete.
+
 \section{Podgraf fokusiran na upit}
 Pretpostavimo da je dan upit $\sigma$. Želimo pronaći podgraf grafa G na kojem ćemo izvesti algoritam. Mogli bi se ograničiti na skup svih stranica koje spominju upit $\sigma$. Međutim, broj takvih stranica može biti vrlo velik što bi uzrokovalo velikim "troškom" kod računanja. Također, kao što smo prije zaključili, najbolji autoriteti možda neće biti u tom skupu.\\
 Htjeli bismo kolekciju $S_{\sigma}$ koja ima sljedeća svojstva
 \begin{enumerate}
-\item $S_{\sigma}$ je relativno mali skup
-\item $S_{\sigma}$ sadrži većinom sadrži relevantne stranice
-\item $S_{\sigma}$ sadrži većinu dobrih autoriteta
+\item $S_{\sigma}$ je relativno mali skup \label{pr:1}
+\item $S_{\sigma}$ sadrži većinom sadrži relevantne stranice \label{pr:2}
+\item $S_{\sigma}$ sadrži većinu dobrih autoriteta \label{pr:3}
 \end{enumerate}
+\subsection{Konstrukcija $S_{\sigma}$}
+Za zadani upit $\sigma$, pronađemo relevantne web stranice i rangiramo ih (npr. broj pojavljivanja upita na stranici, PageRank) i odaberemo $k$ najbolje rangiranih stranica. Na taj način dobivamo skup $R_{\sigma}$ koji nazivamo početni skup("root set"). Taj skup zadovoljava 1. i 2. svojstvo, ali možda ne zadovoljava 3. svojstvo. Koristeći ovaj skup, konstruiramo skup $S_{\sigma}$ na sljedeći način: za svaku stranicu $p$ u $R_{\sigma}$, u $R_{\sigma}$ dodamo sve stranice na koje $p$ pokazuje i $d$ proizvoljnih stranica koje pokazuju na $p$.\\
+Ograničenje na broj stranica koje pokazuju na $p$ osigurava da je skup $s_{\sigma}$ relativno mali (svojstvo (\ref{pr:1})), a iz konstrukcije se vidi da je zadovoljeno svojstvo (\ref{pr:2}). \\
+Pretpostavimo da je $q$ dobar autoritet za zadani upit. Iako se $q$ možda  ne nalazi u $R_{\sigma}$, vrlo je vjerojatno da barem jedna od stranica iz $R_{\sigma}$ pokazuje na $q$ pa se stoga $q$ nalazi u $S_{\sigma}$, tj. zadovoljeno je i svojstvo (\ref{pr:3}).\\
+Podgraf grafa $G$ induciran skupom $S_{\sigma}$ označavamo s $G[S_{\sigma}]$ i na njemu provodimo HITS algoritam.
 
 \section{Matrična formulacija}
 Za usmjereni graf $G=(V,E)$, definiramo matricu linkova:
@@ -114,6 +120,52 @@ Dokaz ovog teorem daje sljedeći rezultat.
 $x^{*}$ je dominantni svojstveni vektor matrice $L^{T}L$, a $y^{*}$ je dominantni svojstveni vektor matrice $LL^{T}$.
 \end{theorem}
 
+\section{Sličnost s bibliometrijskom analiza}
+Bibliometrija se bavi kvantitavnim proučavanjem pisanih dokumenata i pojava kao što su produktivnost autora, citiranje, disperzija članaka, učestalost riječi. \\
+Ko-citacija dokumenata $a$ i $b$ je mjera sličnosti koja se definira kao frekvencija citiranja ta dva dokumenta, tj. broj dokumenata koji citiraju dokumente $a$ i $b$. Što je veći broj dokumenata koji citiraju $a$ i $b$, njihova je ko-citacija veća pa je veća vjerojatnost da su $a$ i $b$ semantički slični.\\
+Slično, ko-referenca dokumenata $a$ i $b$ je mjera sličnosti koje se definira kao broj dokumenata na koje $a$ i $b$ imaju referencu. Ako $a$ i $b$ imaju veću ko-referencu, veća je vjerojatnost da $a$ i $b$ obrađuju sličnu temu.\\
+Na sličan način možemo definirati mjere sličnosti između autoriteta, odnosno hubova.
+\subsection{Autoriteti i ko-citacije}
+Ako na web stranice $p_i$ i $p_j$ pokazuje veći broj stranica, vjerojatnije je da su one na neki način slične.
+Za web stranice $p_i$ i $p_j$ definiramo ko-citacije kao broj web stranica koje pokazuju na $p_i$i $p_j$. Matrično se ovo može zapisati kao
+\begin{equation}
+C_{ij} = \sum_{k} L_{ki}L_{kj} = \sum_{k}(L^{T})_{ik}L_{kj} = (L^{T}L)_{ij}
+\end{equation}
+uz $C_{ii} = 0$. Također vrijedi simetrija, tj. $C_{ij} = C_{ji}$.\\
+Označimo sa $d_{i}$ stupanj ulaznosti stranice $p_{i}$. $d_{i}$ možemo računati kao
+\begin{equation}
+d_{i} = \sum_{k}L_{ki} = \sum_{k}L_{ki}L_{ki} = (L^{T}L)_{ii}
+\end{equation}
+jer je $L_{ki} = L_{ki}^2$ jer je $L_{ki} =1$ ili  $L_{ki} = 0$.\\
+Definiramo matricu stupnjeva ulaznosti $D$:
+\begin{equation}
+D = diag(d_{i},d_{2}, \dots , d_{n})
+\end{equation}
+Tada matrica autoriteta ima sljedeću strukturu:
+\begin{equation}
+L^{T}L = D + C
+\end{equation}
+odnosno, matrica autoriteta je zbroj matrice ko-citacija i matrice stupnjeva ulaznosti.
+\subsection{Hubovi i ko-reference}
+Za web stranice $p_i$ i $p_j$ definiramo ko-reference kao broj web stranica na koje pokazuju $p_i$i $p_j$. Matrično se ovo može zapisati kao
+\begin{equation}
+R_{ij} = \sum_{k} L_{ik}L_{jk} = \sum_{k}L_{ik}(L^{T})_{kj} = (LL^{T})_{ij}
+\end{equation}
+uz $R_{ii} = 0$. Također vrijedi simetrija, tj. $R_{ij} = R_{ji}$.\\
+Označimo sa $o_{i}$ stupanj izlaznosti stranice $p_{i}$. $o_{i}$ možemo računati kao
+\begin{equation}
+o_{i} = \sum_{k}L_{ik} = \sum_{k}L_{ik}L_{ik} = (LL^{T})_{ii}
+\end{equation}
+jer je $L_{ik} = L_{ik}^2$ jer je $L_{ik} =1$ ili  $L_{ik} = 0$.\\
+Definiramo matricu stupnjeva izlaznosti $O$:
+\begin{equation}
+O = diag(o_{i},o_{2}, \dots , o_{n})
+\end{equation}
+Tada matrica autoriteta ima sljedeću strukturu:
+\begin{equation}
+LL^{T} = O + R
+\end{equation}
+odnosno, matrica hubova je zbroj matrice ko-referenca i matrica stupnjeva izlaznosti.
 \section{Vjerojatnosna analiza}
 \begin{prop}
 Prosječna vrijednost ko-citacija dana je formulom
@@ -147,4 +199,5 @@ Koristeći izraz (\ref{eq:4}), prosječna matrica autoriteta je
 \end{equation}
 \end{proof}
 Analogan rezultat vrijedi za matricu hubova $LL^{T}$.
+
 \end{document}
