@@ -1,0 +1,10 @@
+links.mat - 100x100 matrica linkova dobivena pomoću surfera
+urls.mat vektor dimenzije 100 koji sadrži url svih linkova iz matrice links
+
+za pokretanje hits algoritma, u command window učitati .mat datoteke pomoću naredbi:
+L = [struct2cell(load('links.mat')){:}];
+W = [struct2cell(load('urls.mat')){:}];
+pokrenuti hits.m u command windowu pomoću naredbe:
+hits(L, W, 100);
+ 
+

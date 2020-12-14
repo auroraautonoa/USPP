@@ -1,0 +1,16 @@
+HITS primjeri sa stranice http://www.cs.cornell.edu/courses/cs685/2002fa/
+napravljen postupkom opisanim u dokumentu (query search)
+
+U cal_url je 9664 web stranica povezanih s query 'california', u cal_adj.csv je označena povezanost web stranica (16150 parova)
+pomoću funkcije make_adj se stvara matrica linkova iz cal_adj.csv
+
+pokretanje u octave-u: (comanmd window)
+pkg load io
+data = csvread('cal_adj.csv');
+W = csv2cell('cal_url.csv');
+L = make_adj(data, 9664, 16150);
+hits(L, W, 9664);
+
+
+za drugi primjer, zamjeniti 'cal' s 'epa', broj web stranica je 4773, broj parova je 8965
+drugi primjer je napravljen po opisu 'Similar-Page Queries'
