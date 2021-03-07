@@ -76,7 +76,7 @@ Neka je $I$ broj stranica u našem podgrafu. Svaka stranica ima hub-score $h$ i 
 \end{equation}
 
 \begin{equation}\label{eq:2}
-    \boldsymbol{a}_{j}^{(t+1)} = \displaystyle\sum_{i \rightarrow j} \boldsymbol{h}_i^{t+1}
+    \boldsymbol{a}_{j}^{(t+1)} = \displaystyle\sum_{i \rightarrow j} \boldsymbol{h}_i^{(t+1)}
 \end{equation}
 
 \begin{flushleft}
@@ -89,8 +89,8 @@ Zapišimo to matrično. Neka je $I \times I$ matrica susjedstva $\boldsymbol{X}$
 \begin{equation}
     X_{i,j} =  \left\{
 	\begin{array}{ll}
-		1  & \mbox{ako stranica i pokazuje na stranicu j} \\
-		0 & \mbox{inače }
+		1  & \mbox{, ako stranica i pokazuje na stranicu j} \\
+		0 & \mbox{, inače }
 	\end{array}
 \right.
 \end{equation}
@@ -98,7 +98,7 @@ Zapišimo to matrično. Neka je $I \times I$ matrica susjedstva $\boldsymbol{X}$
 Tada jednadžbe \ref{eq:1} i \ref{eq:2} postaju:
 \end{flushleft}
 \begin{equation}
-    \boldsymbol{h}^{(t+1)} = \boldsymbol{X} \boldsymbol{a}^{(t)} \\ , \\
+    \boldsymbol{h}^{(t+1)} = \boldsymbol{X} \boldsymbol{a}^{(t)} \hspace{0.5cm}
     \boldsymbol{a}^{(t+1)} = \boldsymbol{X}^{T} \boldsymbol{h}^{(t+1)}
 \end{equation}
 
@@ -110,7 +110,7 @@ Prvih R faktora singularne dekompozicije of $\boldsymbol{X}$ proizvodi najbolju 
 \end{equation}
 
 \begin{raggedleft}
-Vrijedi $\Sigma = diag\{\sigma_{1} \ldots \sigma_{R}\}$ i za singularne vrijednosti pretpostavljamo $\sigma_{1} \ge \sigma_{2} \ge \ldots \ge \sigma_{R} > 0 $ i gdje su $\boldsymbol{h_r}$ i $\boldsymbol{a_r}$ odgovarajući singularni vektori. Matrice $\boldsymbol{H} i  \boldsymbol{A}$ su veličine $I \times R$ i imaju ortonormalna polja. To možemo zamisliti kao aproksimaciju matrice $\boldsymbol{X}$ sumom $R$ 1 ranga vanjskog produkta, kako je prikazano na  (\ref{figure:2}) Glavni par singularnih vektora $\boldsymbol{h_1}$ i $\boldsymbol{a_1}$ pruža hub i aurotitet rezultate za dominantnu temu u kolekciji web stranica. Drugim riječima, stranice koje imaju najveće rezultate $\boldsymbol{h_1}$ su najbolji hubovi za dominantnu temu, a stranice koje imaju najveće rezultate u $\boldsymbol{a_1}$ su najbolji autoriteti. 
+Vrijedi $\Sigma = diag\{\sigma_{1} \ldots \sigma_{R}\}$ i za singularne vrijednosti pretpostavljamo $\sigma_{1} \ge \sigma_{2} \ge \ldots \ge \sigma_{R} > 0 $ i gdje su $\boldsymbol{h_r}$ i $\boldsymbol{a_r}$ odgovarajući singularni vektori. Matrice $\boldsymbol{H}$ i $\boldsymbol{A}$ su veličine $I \times R$ i imaju ortonormalna polja. To možemo zamisliti kao aproksimaciju matrice $\boldsymbol{X}$ sumom $R$ 1 ranga vanjskog produkta, kako je prikazano na  (\ref{figure:2}) Glavni par singularnih vektora $\boldsymbol{h_1}$ i $\boldsymbol{a_1}$ pruža hub i aurotitet rezultate za dominantnu temu u kolekciji web stranica. Drugim riječima, stranice koje imaju najveće rezultate $\boldsymbol{h_1}$ su najbolji hubovi za dominantnu temu, a stranice koje imaju najveće rezultate u $\boldsymbol{a_1}$ su najbolji autoriteti. 
 \end{raggedleft}
 
 \begin{figure}[hbt!]
@@ -136,11 +136,11 @@ Slično kao HITS, rezultati se mogu dobiti iterativno. Neka je $I$ broj stranica
 \end{equation}
 
 \begin{equation}\label{eq:4}
-    \boldsymbol{a}_{j}^{(t+1)} = \displaystyle\sum_{i \xrightarrow{\text{k}} j} \boldsymbol{h}_i^{t+1} \boldsymbol{t}_{k}^{(t)} \hspace{1cm} \text{za} \hspace{0.3cm} j = 1, \ldots, I
+    \boldsymbol{a}_{j}^{(t+1)} = \displaystyle\sum_{i \xrightarrow{\text{k}} j} \boldsymbol{h}_i^{(t+1)} \boldsymbol{t}_{k}^{(t)} \hspace{1cm} \text{za} \hspace{0.3cm} j = 1, \ldots, I
 \end{equation}
 
 \begin{equation}\label{eq:5}
-    \boldsymbol{t}_{k}^{(t+1)} = \displaystyle\sum_{i \xrightarrow{\text{k}} j} \boldsymbol{a}_j^{t+1} \boldsymbol{h}_i^{t+1} \hspace{1cm} \text{za} \hspace{0.3cm} k = 1, \ldots, I
+    \boldsymbol{t}_{k}^{(t+1)} = \displaystyle\sum_{i \xrightarrow{\text{k}} j} \boldsymbol{a}_j^{(t+1)} \boldsymbol{h}_i^{(t+1)} \hspace{1cm} \text{za} \hspace{0.3cm} k = 1, \ldots, I
 \end{equation}
 
 \begin{raggedleft}
@@ -148,14 +148,14 @@ Kao i kod HITS-a, normaliziramo vrijednosti nakon svake iteracije.
 \end{raggedleft}
 
 \begin{flushleft}
-Zapišimo to u tenzor formi. Neka je $\boldsymbol{X}$ $I \times I \times K $ tenzor susjedstva podgrafa definiran kao:
+Zapišimo to u tenzor formi. Neka je $\boldsymbol{\mathcal{X}}$  veličine $I \times I \times K $ tenzor susjedstva podgrafa definiran kao:
 \end{flushleft}
 
 \begin{equation}\label{eq:6}
     X_{i,j, k} =  \left\{
 	\begin{array}{ll}
-		1  & \mbox{ako stranica i pokazuje na stranicu j koristeći term k} \\
-		0 & \mbox{inače }
+		1  & \mbox{, ako stranica i pokazuje na stranicu j koristeći term k} \\
+		0 & \mbox{, inače }
 	\end{array}
 \right.
 \end{equation}
@@ -174,10 +174,10 @@ Tada se jednadžbe \ref{eq:3}, \ref{eq:4} i \ref{eq:5} mogu zapisati kao:
 \end{equation}
 
 \begin{flushleft}
-Ovdje notacija $\boldsymbol{X}\overset{-}{\times}_{i} \boldsymbol{x}$ znači množenje  tenzora $\boldsymbol{X}$ vektorom $x$ u dimenziji i.
+Ovdje notacija $\boldsymbol{\mathcal{X}}\overset{-}{\times}_{i} \boldsymbol{x}$ znači množenje  tenzora $\boldsymbol{\mathcal{X}}$ vektorom $x$ u dimenziji i.
 \end{flushleft}
 \begin{flushleft}
-Tada se aproksimacija tenzora $\boldsymbol{X}$ PARAFAC dekompozicijom može dobiti kao:
+Tada se aproksimacija tenzora $\boldsymbol{\mathcal{X}}$ PARAFAC dekompozicijom može dobiti kao:
 \end{flushleft}
 \begin{equation}
     \boldsymbol{\mathcal{X} \approx \lambda [\![ H, A, T ]\!] \equiv \sum_{r = 1}^{R} \lambda_{r} h_{r} \circ a_{r} \circ t_{r}}
@@ -185,7 +185,7 @@ Tada se aproksimacija tenzora $\boldsymbol{X}$ PARAFAC dekompozicijom može dobi
 
 \begin{raggedleft}
 Ovdje pretpostavljamo $\lambda_{1} \ge \lambda_{2} \ge \ldots \ge \lambda_{R}$.
-Matrice $\boldsymbol{H, A, T}$ imaju polja duljine 1, ali suprotno od SVD-a, nisu generalno ortonormalne. PARAFAC dekompozicija aproksimira tenzor $\boldsymbol{\mathcal{X}}$ sumom , kao što je  prikazano na (\ref{fig:3}) .
+Matrice $\boldsymbol{H, A, T}$ imaju polja duljine 1, ali suprotno od SVD-a, nisu generalno ortonormalne. PARAFAC dekompozicija aproksimira tenzor $\boldsymbol{\mathcal{X}}$ sumom R 1-rangova vanjskih produkata, kao što je  prikazano na (\ref{fig:3}) .
 \end{raggedleft}
 
 \begin{figure}[hbt!]
@@ -334,7 +334,7 @@ Umjesto toga, računanje
 \begin{equation}
     \boldsymbol{X}_{(n)}\boldsymbol{Z}^{(n)}    
 \end{equation}
-potrebno za (2.5) mora biti izračunato posebno, iskorištavanjem svojstava Kroneckerove strukture produkta u $\boldsymbol{Z}^{(n)}$ da bi se očuvala rijetkost. Završni rezultat je veličine $I_n \times R$ stoga sse može pohraniti u gustu matricu.
+potrebno za (2.5) mora biti izračunato posebno, iskorištavanjem svojstava Kroneckerove strukture produkta u $\boldsymbol{Z}^{(n)}$ da bi se očuvala rijetkost. Završni rezultat je veličine $I_n \times R$ stoga se može pohraniti u gustu matricu.
 Jedna od metoda prikazana je sljedećim algoritmom:
 
 \begin{figure}[hbt!]
